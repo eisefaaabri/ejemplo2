@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard de observabilidad local del sitio web de Cristiano Ronaldo. Métricas de rendimiento, errores, clics y entorno sin backend.">
+  <title>Observabilidad — CR7 Dashboard</title>
+  <link rel="stylesheet" href="observabilidad.css">
+</head>
+<body>
+
+  <div class="dashboard" role="main">
+
+    <!-- ======= Cabecera ======= -->
+    <header class="dash-header">
+      <h1><span>📊</span> Observabilidad <span>CR7</span></h1>
+      <a href="index.html" class="dash-back" aria-label="Volver a la página principal">← Volver al sitio</a>
+    </header>
+
+    <!-- ======= Barra de acciones ======= -->
+    <div class="actions-bar" role="toolbar" aria-label="Acciones del dashboard">
+      <button type="button" class="btn btn--primary" id="btnRefresh" aria-label="Actualizar datos del dashboard">
+        🔄 Actualizar
+      </button>
+      <button type="button" class="btn" id="btnDemo" aria-label="Generar evento de demostración">
+        🧪 Evento demo
+      </button>
+      <button type="button" class="btn" id="btnDownload" aria-label="Descargar snapshot en formato JSON">
+        💾 Descargar JSON
+      </button>
+      <button type="button" class="btn btn--danger" id="btnClear" aria-label="Limpiar todos los datos de observabilidad">
+        🗑️ Limpiar datos
+      </button>
+      <span class="last-update" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        Actualizado: <time id="lastUpdateTime">—</time>
+      </span>
+    </div>
+
+    <!-- ======= KPIs resumen ======= -->
+    <section class="kpi-grid" aria-label="Métricas principales">
+      <div class="kpi-card">
+        <div class="kpi-label">Tiempo de carga</div>
+        <div class="kpi-value" id="kpiLoad">—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">TTFB</div>
+        <div class="kpi-value" id="kpiTTFB">—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Errores JS</div>
+        <div class="kpi-value" id="kpiErrors">—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Errores de recursos</div>
+        <div class="kpi-value" id="kpiResErrors">—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Clics registrados</div>
+        <div class="kpi-value" id="kpiClicks">—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Sesiones</div>
+        <div class="kpi-value" id="kpiSessions">—</div>
+      </div>
+    </section>
+
+    <!-- ======= Performance ======= -->
+    <section class="section" aria-labelledby="perfTitle">
+      <div class="section-head">
+        <h2 id="perfTitle">⚡ Rendimiento</h2>
+        <span class="badge" id="perfBadge">—</span>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="perfTable" aria-label="Métricas de rendimiento de navegación">
+          <thead>
+            <tr>
+              <th scope="col">Métrica</th>
+              <th scope="col">Valor</th>
+            </tr>
+          </thead>
+          <tbody id="perfBody">
+            <tr><td colspan="2" class="empty-state"><span class="icon" aria-hidden="true">⏳</span>Sin datos de rendimiento</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ======= Recursos ======= -->
+    <section class="section" aria-labelledby="resTitle">
+      <div class="section-head">
+        <h2 id="resTitle">📦 Recursos cargados</h2>
+        <span class="badge" id="resBadge">0</span>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="resTable" aria-label="Resumen de recursos cargados por tipo">
+          <thead>
+            <tr>
+              <th scope="col">Tipo</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Tiempo total</th>
+            </tr>
+          </thead>
+          <tbody id="resBody">
+            <tr><td colspan="3" class="empty-state"><span class="icon" aria-hidden="true">📦</span>Sin datos de recursos</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ======= Errores ======= -->
+    <section class="section" aria-labelledby="errTitle">
+      <div class="section-head">
+        <h2 id="errTitle">🐛 Errores</h2>
+        <span class="badge" id="errBadge">0</span>
+      </div>
+      <div class="table-wrap" style="max-height: 400px; overflow-y: auto;">
+        <table class="data-table" id="errTable" aria-label="Registro de errores JavaScript y promesas rechazadas">
+          <thead>
+            <tr>
+              <th scope="col">Tipo</th>
+              <th scope="col">Mensaje</th>
+              <th scope="col">Origen</th>
+              <th scope="col">Hora</th>
+            </tr>
+          </thead>
+          <tbody id="errBody">
+            <tr><td colspan="4" class="empty-state"><span class="icon" aria-hidden="true">✅</span>Sin errores registrados</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ======= Errores de recursos ======= -->
+    <section class="section" aria-labelledby="resErrTitle">
+      <div class="section-head">
+        <h2 id="resErrTitle">⚠️ Errores de recursos</h2>
+        <span class="badge" id="resErrBadge">0</span>
+      </div>
+      <div class="table-wrap" style="max-height: 300px; overflow-y: auto;">
+        <table class="data-table" id="resErrTable" aria-label="Registro de errores de carga de recursos">
+          <thead>
+            <tr>
+              <th scope="col">Tag</th>
+              <th scope="col">URL</th>
+              <th scope="col">Hora</th>
+            </tr>
+          </thead>
+          <tbody id="resErrBody">
+            <tr><td colspan="3" class="empty-state"><span class="icon" aria-hidden="true">✅</span>Sin errores de recursos</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ======= Clics ======= -->
+    <section class="section" aria-labelledby="clicksTitle">
+      <div class="section-head">
+        <h2 id="clicksTitle">👆 Clics</h2>
+        <span class="badge" id="clicksBadge">0</span>
+      </div>
+      <div class="table-wrap" style="max-height: 400px; overflow-y: auto;">
+        <table class="data-table" id="clicksTable" aria-label="Registro de clics en elementos interactivos">
+          <thead>
+            <tr>
+              <th scope="col">Elemento</th>
+              <th scope="col">Texto / Destino</th>
+              <th scope="col">Hora</th>
+            </tr>
+          </thead>
+          <tbody id="clicksBody">
+            <tr><td colspan="3" class="empty-state"><span class="icon" aria-hidden="true">👆</span>Sin clics registrados</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ======= Visibilidad ======= -->
+    <section class="section" aria-labelledby="visTitle">
+      <div class="section-head">
+        <h2 id="visTitle">👁️ Visibilidad</h2>
+        <span class="badge" id="visBadge">0</span>
+      </div>
+      <div class="table-wrap" style="max-height: 250px; overflow-y: auto;">
+        <table class="data-table" id="visTable" aria-label="Registro de cambios de visibilidad de la pestaña">
+          <thead>
+            <tr>
+              <th scope="col">Estado</th>
+              <th scope="col">Nota</th>
+              <th scope="col">Hora</th>
+            </tr>
+          </thead>
+          <tbody id="visBody">
+            <tr><td colspan="3" class="empty-state"><span class="icon" aria-hidden="true">👁️</span>Sin cambios de visibilidad</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ======= Entorno ======= -->
+    <section class="section" aria-labelledby="envTitle">
+      <div class="section-head">
+        <h2 id="envTitle">🖥️ Entorno</h2>
+      </div>
+      <div class="env-grid" id="envGrid">
+        <div class="empty-state"><span class="icon" aria-hidden="true">🖥️</span>Sin datos de entorno</div>
+      </div>
+    </section>
+
+    <!-- ======= Footer ======= -->
+    <footer class="dash-footer">
+      <p>Dashboard de observabilidad local · Sin backend · Datos en <code>localStorage</code></p>
+      <p><a href="index.html">Volver al sitio de CR7</a></p>
+    </footer>
+  </div>
+
+  <!-- Toast de notificaciones -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="observabilidad.js"></script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página dedicada a Cristiano Ronaldo: biografía, trayectoria, estadísticas, galería y palmarés del mejor goleador de la historia del fútbol.">
+  <meta name="keywords" content="Cristiano Ronaldo, CR7, fútbol, biografía, estadísticas, goles, Real Madrid, Manchester United, Juventus, Al Nassr">
+  <meta name="author" content="Proyecto Web Estático">
+  <title>Cristiano Ronaldo — CR7 | Biografía, Trayectoria y Estadísticas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ======= SALTAR AL CONTENIDO (M4) ======= -->
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ==========================================
+       NAVEGACIÓN PRINCIPAL
+       ========================================== -->
+  <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+    <div class="container nav-wrapper">
+      <a href="#inicio" class="nav-logo" aria-label="Ir al inicio">CR7</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#biografia">Biografía</a></li>
+        <li><a href="#trayectoria">Trayectoria</a></li>
+        <li><a href="#estadisticas">Estadísticas</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#palmares">Palmarés</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       HEADER / HERO
+       ========================================== -->
+  <header class="site-header" id="inicio">
+    <div class="hero-content">
+      <span class="hero-badge">⚽ El Mejor Goleador de la Historia</span>
+      <h1 class="hero-title">Cristiano Ronaldo</h1>
+      <p class="hero-subtitle">
+        Cinco veces Balón de Oro. Máximo goleador internacional de todos los tiempos. 
+        Una leyenda que redefinió los límites del fútbol mundial.
+      </p>
+      <a href="#biografia" class="hero-cta">Descubrir su historia →</a>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      Scroll
+      <span></span>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       CONTENIDO PRINCIPAL
+       ========================================== -->
+  <main id="main">
+
+    <!-- ======= BIOGRAFÍA ======= -->
+    <section id="biografia" aria-labelledby="biografia-titulo">
+      <div class="container">
+        <h2 class="section-title reveal" id="biografia-titulo">Biografía</h2>
+        <p class="section-subtitle reveal">De las calles de Funchal a la cima del fútbol mundial</p>
+
+        <div class="bio-grid">
+          <div class="bio-image-wrapper reveal">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg"
+              alt="Cristiano Ronaldo con el uniforme de la selección de Portugal durante un partido internacional en 2018"
+              loading="lazy"
+              width="600"
+              height="500"
+            >
+          </div>
+          <div class="bio-text reveal">
+            <h3>El Niño de Madeira</h3>
+            <p>
+              <strong>Cristiano Ronaldo dos Santos Aveiro</strong> nació el 5 de febrero de 1985 en 
+              Funchal, Madeira, Portugal. Criado en un barrio humilde, desde muy pequeño mostró una 
+              pasión extraordinaria por el fútbol que lo llevaría a convertirse en uno de los 
+              deportistas más grandes de todos los tiempos.
+            </p>
+            <p>
+              A los 12 años dejó su hogar para unirse a la academia del Sporting de Lisboa, 
+              donde rápidamente destacó entre sus compañeros. Su talento natural, combinado con 
+              una ética de trabajo incomparable, llamó la atención de los mejores clubes europeos. 
+              En 2003, con solo 18 años, Sir Alex Ferguson lo fichó para el Manchester United, 
+              iniciando así una carrera legendaria.
+            </p>
+
+            <div class="bio-info-cards">
+              <div class="bio-info-card">
+                <span class="label">Nombre completo</span>
+                <span class="value">Cristiano Ronaldo dos Santos Aveiro</span>
+              </div>
+              <div class="bio-info-card">
+                <span class="label">Fecha de nacimiento</span>
+                <span class="value">5 de febrero de 1985</span>
+              </div>
+              <div class="bio-info-card">
+                <span class="label">Lugar de nacimiento</span>
+                <span class="value">Funchal, Madeira 🇵🇹</span>
+              </div>
+              <div class="bio-info-card">
+                <span class="label">Posición</span>
+                <span class="value">Extremo / Delantero</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= TRAYECTORIA / LÍNEA DE TIEMPO ======= -->
+    <section id="trayectoria" aria-labelledby="trayectoria-titulo">
+      <div class="container">
+        <h2 class="section-title reveal" id="trayectoria-titulo">Trayectoria</h2>
+        <p class="section-subtitle reveal">Haz clic en cada etapa para descubrir los detalles</p>
+
+        <ul class="timeline" aria-label="Línea de tiempo de la carrera de Cristiano Ronaldo">
+
+          <li class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <button type="button" class="timeline-btn" aria-expanded="false">
+                <span class="timeline-year">2002 – 2003</span>
+                <span class="timeline-title">Sporting de Lisboa</span>
+                <span class="timeline-toggle-hint">Clic para más detalles</span>
+              </button>
+              <div class="timeline-desc" hidden>
+                <p>
+                  Debutó en la primera división portuguesa con solo 17 años, 
+                  deslumbrando con su velocidad y regate. Anotó 5 goles en 31 partidos, 
+                  llamando la atención del Manchester United tras un amistoso memorable.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <button type="button" class="timeline-btn" aria-expanded="false">
+                <span class="timeline-year">2003 – 2009</span>
+                <span class="timeline-title">Manchester United</span>
+                <span class="timeline-toggle-hint">Clic para más detalles</span>
+              </button>
+              <div class="timeline-desc" hidden>
+                <p>
+                  Bajo la tutela de Sir Alex Ferguson, Cristiano pasó de ser un joven promesa 
+                  a ganar el Balón de Oro en 2008. Conquistó 3 Premier Leagues, 1 Champions League 
+                  y anotó 118 goles en 292 partidos, consolidándose como estrella mundial.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <button type="button" class="timeline-btn" aria-expanded="false">
+                <span class="timeline-year">2009 – 2018</span>
+                <span class="timeline-title">Real Madrid</span>
+                <span class="timeline-toggle-hint">Clic para más detalles</span>
+              </button>
+              <div class="timeline-desc" hidden>
+                <p>
+                  La era dorada. Se convirtió en el máximo goleador histórico del club con 
+                  450 goles en 438 partidos. Ganó 4 Champions League, 2 Ligas y 4 Balones de Oro. 
+                  Una época irrepetible que lo consagró como leyenda absoluta del fútbol.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <button type="button" class="timeline-btn" aria-expanded="false">
+                <span class="timeline-year">2018 – 2021</span>
+                <span class="timeline-title">Juventus</span>
+                <span class="timeline-toggle-hint">Clic para más detalles</span>
+              </button>
+              <div class="timeline-desc" hidden>
+                <p>
+                  Aceptó el desafío de conquistar Italia. Anotó 101 goles en 134 partidos, 
+                  ganando 2 Scudettos y demostrando que su nivel no conocía fronteras ni ligas. 
+                  A los 36 años seguía siendo el mejor del mundo.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <button type="button" class="timeline-btn" aria-expanded="false">
+                <span class="timeline-year">2021 – 2022</span>
+                <span class="timeline-title">Manchester United (regreso)</span>
+                <span class="timeline-toggle-hint">Clic para más detalles</span>
+              </button>
+              <div class="timeline-desc" hidden>
+                <p>
+                  Volvió a Old Trafford como un héroe. A pesar de las dificultades del equipo, 
+                  Cristiano anotó 27 goles en 54 partidos, incluyendo noches mágicas en Champions 
+                  League con hat-tricks memorables.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <button type="button" class="timeline-btn" aria-expanded="false">
+                <span class="timeline-year">2023 – Presente</span>
+                <span class="timeline-title">Al Nassr</span>
+                <span class="timeline-toggle-hint">Clic para más detalles</span>
+              </button>
+              <div class="timeline-desc" hidden>
+                <p>
+                  Inició un nuevo capítulo en Arabia Saudí, convirtiéndose en embajador global 
+                  de la liga saudí. Continúa batiendo récords y demostrando su insaciable sed 
+                  de goles, superando los 900 goles en su carrera profesional.
+                </p>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======= ESTADÍSTICAS ======= -->
+    <section id="estadisticas" aria-labelledby="estadisticas-titulo">
+      <div class="container">
+        <h2 class="section-title reveal" id="estadisticas-titulo">Estadísticas</h2>
+        <p class="section-subtitle reveal">Números que hablan de una carrera sin precedentes</p>
+
+        <div class="stats-grid">
+          <div class="stat-card reveal">
+            <span class="stat-icon" aria-hidden="true">⚽</span>
+            <span class="stat-number" data-target="900" data-suffix="+">900+</span>
+            <span class="stat-label">Goles en carrera</span>
+          </div>
+          <div class="stat-card reveal">
+            <span class="stat-icon" aria-hidden="true">🏟️</span>
+            <span class="stat-number" data-target="1200" data-suffix="+">1200+</span>
+            <span class="stat-label">Partidos jugados</span>
+          </div>
+          <div class="stat-card reveal">
+            <span class="stat-icon" aria-hidden="true">🎯</span>
+            <span class="stat-number" data-target="230" data-suffix="+">230+</span>
+            <span class="stat-label">Asistencias</span>
+          </div>
+          <div class="stat-card reveal">
+            <span class="stat-icon" aria-hidden="true">🏆</span>
+            <span class="stat-number" data-target="35" data-suffix="">35</span>
+            <span class="stat-label">Títulos ganados</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= GALERÍA ======= -->
+    <section id="galeria" aria-labelledby="galeria-titulo">
+      <div class="container">
+        <h2 class="section-title reveal" id="galeria-titulo">Galería</h2>
+        <p class="section-subtitle reveal">Momentos icónicos de una leyenda</p>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal" tabindex="0" role="button" aria-label="Ampliar imagen: Cristiano Ronaldo celebrando un gol con el Real Madrid">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Cristiano_Ronaldo_-_Manchester_United_VS_Bursaspor_%281%29.jpg"
+              alt="Cristiano Ronaldo con el uniforme rojo del Manchester United durante un partido de Champions League contra el Bursaspor"
+              loading="lazy"
+              width="600"
+              height="450"
+            >
+            <div class="gallery-overlay">
+              <h4>Manchester United</h4>
+              <p>Cristiano durante un partido de Champions League</p>
+            </div>
+          </figure>
+
+          <figure class="gallery-item reveal" tabindex="0" role="button" aria-label="Ampliar imagen: Cristiano Ronaldo en el Real Madrid">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Cristiano_Ronaldo_20120609.jpg"
+              alt="Cristiano Ronaldo con la camiseta blanca del Real Madrid en un partido de la temporada 2012, celebrando con los puños apretados"
+              loading="lazy"
+              width="600"
+              height="450"
+            >
+            <div class="gallery-overlay">
+              <h4>Real Madrid</h4>
+              <p>La etapa más goleadora de su carrera</p>
+            </div>
+          </figure>
+
+          <figure class="gallery-item reveal" tabindex="0" role="button" aria-label="Ampliar imagen: Cristiano Ronaldo con la selección de Portugal">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg"
+              alt="Cristiano Ronaldo con el uniforme de la selección de Portugal durante el Mundial de Rusia 2018"
+              loading="lazy"
+              width="600"
+              height="450"
+            >
+            <div class="gallery-overlay">
+              <h4>Selección de Portugal</h4>
+              <p>Líder y capitán de la selección portuguesa</p>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= PALMARÉS ======= -->
+    <section id="palmares" aria-labelledby="palmares-titulo">
+      <div class="container">
+        <h2 class="section-title reveal" id="palmares-titulo">Palmarés</h2>
+        <p class="section-subtitle reveal">Un vitrina de trofeos incomparable</p>
+
+        <div class="palmares-grid">
+          <div class="palmares-card reveal">
+            <span class="palmares-icon" aria-hidden="true">🏆</span>
+            <span class="palmares-count" data-target="5">5</span>
+            <h3 class="palmares-title">Balones de Oro</h3>
+            <p class="palmares-desc">2008, 2013, 2014, 2016, 2017</p>
+          </div>
+          <div class="palmares-card reveal">
+            <span class="palmares-icon" aria-hidden="true">⭐</span>
+            <span class="palmares-count" data-target="5">5</span>
+            <h3 class="palmares-title">Champions League</h3>
+            <p class="palmares-desc">1 con Man. United, 4 con Real Madrid</p>
+          </div>
+          <div class="palmares-card reveal">
+            <span class="palmares-icon" aria-hidden="true">🥇</span>
+            <span class="palmares-count" data-target="7">7</span>
+            <h3 class="palmares-title">Ligas Nacionales</h3>
+            <p class="palmares-desc">3 Premier League, 2 La Liga, 2 Serie A</p>
+          </div>
+          <div class="palmares-card reveal">
+            <span class="palmares-icon" aria-hidden="true">🇵🇹</span>
+            <span class="palmares-count" data-target="2">2</span>
+            <h3 class="palmares-title">Títulos con Portugal</h3>
+            <p class="palmares-desc">Euro 2016, Nations League 2019</p>
+          </div>
+          <div class="palmares-card reveal">
+            <span class="palmares-icon" aria-hidden="true">👟</span>
+            <span class="palmares-count" data-target="4">4</span>
+            <h3 class="palmares-title">Botas de Oro</h3>
+            <p class="palmares-desc">Máximo goleador europeo en 4 temporadas</p>
+          </div>
+          <div class="palmares-card reveal">
+            <span class="palmares-icon" aria-hidden="true">🌍</span>
+            <span class="palmares-count" data-target="3">3</span>
+            <h3 class="palmares-title">Mejor Jugador FIFA</h3>
+            <p class="palmares-desc">The Best FIFA 2017, 2018 · FIFA World Player</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-3xl);" class="reveal">
+          <h3 style="color: var(--color-text-secondary); margin-bottom: var(--space-lg); font-weight: 400;">
+            Conoce más sobre Cristiano Ronaldo
+          </h3>
+          <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
+            <a href="https://www.instagram.com/cristiano/" target="_blank" rel="noopener noreferrer" class="hero-cta" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">
+              📸 Instagram oficial <span class="sr-only">(se abre en nueva pestaña)</span>
+            </a>
+            <a href="https://es.wikipedia.org/wiki/Cristiano_Ronaldo" target="_blank" rel="noopener noreferrer" class="hero-cta" style="background: var(--color-bg-glass); color: var(--color-gold); border: 1px solid var(--color-gold-dark); font-size: 0.9rem; padding: 0.75rem 1.5rem;">
+              📖 Wikipedia <span class="sr-only">(se abre en nueva pestaña)</span>
+            </a>
+            <a href="https://www.youtube.com/@cristiano" target="_blank" rel="noopener noreferrer" class="hero-cta" style="background: var(--color-bg-glass); color: var(--color-gold); border: 1px solid var(--color-gold-dark); font-size: 0.9rem; padding: 0.75rem 1.5rem;">
+              ▶️ YouTube <span class="sr-only">(se abre en nueva pestaña)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>CR7</h3>
+          <p>
+            Página informativa dedicada a la vida y carrera de Cristiano Ronaldo, 
+            el máximo goleador de la historia del fútbol. Proyecto educativo sin fines comerciales.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#biografia">Biografía</a></li>
+            <li><a href="#trayectoria">Trayectoria</a></li>
+            <li><a href="#estadisticas">Estadísticas</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#palmares">Palmarés</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Redes oficiales</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/cristiano/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram de Cristiano Ronaldo (se abre en nueva pestaña)">📸</a>
+            <a href="https://x.com/Cristiano" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter) de Cristiano Ronaldo (se abre en nueva pestaña)">𝕏</a>
+            <a href="https://www.youtube.com/@cristiano" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube de Cristiano Ronaldo (se abre en nueva pestaña)">▶️</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Página sobre Cristiano Ronaldo. Proyecto educativo. Todos los derechos de imagen pertenecen a sus respectivos propietarios.</p>
+        <p>Hecho con ❤️ y HTML, CSS, JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======= LIGHTBOX ======= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar visor de imagen">&times;</button>
+    <img src="" alt="" id="lightboxImg">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
